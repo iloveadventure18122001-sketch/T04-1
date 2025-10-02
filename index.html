@@ -45,6 +45,16 @@
       stroke-width: 1;
       pointer-events: none;
     }
+    /* Scoped styles for grouped SVG only */
+    #scene-grouped #window rect {
+      fill: #b3e5fc;
+      stroke: #1976d2;
+      stroke-width: 2;
+    }
+    #scene-grouped #window line {
+      stroke: #1976d2;
+      stroke-width: 2;
+    }
   </style>
 </head>
 <body>
@@ -226,6 +236,94 @@
           <line x1="400" y1="480" x2="400" y2="490" />
           <text x="402" y="478">text(x=400, y=490)</text>
         </g>
+      </svg>
+    </div>
+  </figure>
+  <!-- (Assume a third SVG for "adjusted" would be here, per prompt) -->
+
+  <!-- Step 4: Grouped windows SVG -->
+  <figure id="scene-grouped-figure">
+    <figcaption>Grouped windows scene (Step 4)</figcaption>
+    <div class="svg-container">
+      <svg
+        id="scene-grouped"
+        viewBox="0 0 800 500"
+        width="800"
+        height="500"
+        aria-labelledby="svgTitle4 svgDesc4"
+        role="img"
+      >
+        <title id="svgTitle4">House and Garden Scene (Grouped Windows)</title>
+        <desc id="svgDesc4">
+          An SVG illustration of a house with a garden, using a grouped window for both house windows.
+        </desc>
+        <!-- Sky (rect) -->
+        <rect x="0" y="0" width="800" height="300" fill="#aee7ff" />
+        <!-- Grass (rect) -->
+        <rect x="0" y="300" width="800" height="200" fill="#7ed957" />
+
+        <!-- Sun (circle) -->
+        <circle cx="100" cy="100" r="50" fill="#ffe066" stroke="#ffd700" stroke-width="4" />
+
+        <!-- Cloud (ellipse + circles) -->
+        <ellipse cx="250" cy="90" rx="50" ry="25" fill="#fff" opacity="0.9"/>
+        <circle cx="220" cy="90" r="22" fill="#fff" opacity="0.9"/>
+        <circle cx="280" cy="90" r="18" fill="#fff" opacity="0.9"/>
+
+        <!-- Tree trunk (rect) -->
+        <rect x="650" y="270" width="25" height="80" fill="#8d5524" />
+        <!-- Tree foliage (circle) -->
+        <circle cx="662" cy="250" r="40" fill="#3cb371" />
+        <circle cx="690" cy="260" r="28" fill="#3cb371" />
+        <circle cx="635" cy="265" r="25" fill="#3cb371" />
+
+        <!-- House body (rect) -->
+        <rect x="340" y="220" width="160" height="120" fill="#f7cac9" stroke="#b56576" stroke-width="3"/>
+        <!-- Roof (polygon) -->
+        <polygon points="330,220 420,150 510,220" fill="#b5651d" stroke="#8d5524" stroke-width="3"/>
+        <!-- Chimney (rect) -->
+        <rect x="460" y="160" width="22" height="40" fill="#b56576" stroke="#8d5524" stroke-width="2"/>
+        <!-- Chimney smoke (polyline) -->
+        <polyline points="471,150 475,140 470,130 474,120" fill="none" stroke="#bbb" stroke-width="3" stroke-linecap="round" />
+
+        <!-- Door (rect) -->
+        <rect x="405" y="280" width="30" height="60" fill="#a0522d" stroke="#7b3f00" stroke-width="2"/>
+        <!-- Door knob (circle) -->
+        <circle cx="432" cy="310" r="3" fill="#ffd700" />
+
+        <!-- Grouped window definition -->
+        <defs>
+          <!--
+            Grouping the window elements allows easy reuse and consistent appearance.
+            The window is defined as a 35x30 rect with mullion lines at the center.
+          -->
+          <g id="window">
+            <rect x="0" y="0" width="30" height="30"/>
+            <!-- Vertical mullion at center -->
+            <line x1="15" y1="0" x2="15" y2="30"/>
+            <!-- Horizontal mullion at center -->
+            <line x1="0" y1="15" x2="30" y2="15"/>
+          </g>
+        </defs>
+
+        <!-- Left window: translate(355,245) to match original position -->
+        <!-- The benefit of grouping: both windows use the same definition, ensuring consistency and easier updates. -->
+        <use href="#window" transform="translate(355,245)" />
+        <!-- Right window: translate(455,245) to match original position -->
+        <use href="#window" transform="translate(455,245)" />
+
+        <!-- Fence (polyline) -->
+        <polyline points="200,340 220,320 240,340 260,320 280,340 300,320 320,340 340,320 360,340 380,320 400,340"
+          fill="none" stroke="#deb887" stroke-width="8" stroke-linejoin="round" />
+
+        <!-- Curved garden path (path) -->
+        <path d="M420,340 Q430,400 390,470 Q420,480 450,470 Q410,400 420,340"
+          fill="#f5e6b2" stroke="#bfa76f" stroke-width="3" opacity="0.8"/>
+
+        <!-- Caption (text) -->
+        <text x="400" y="490" text-anchor="middle" font-size="28" fill="#2d3e50" font-family="Arial, sans-serif">
+          Home Sweet Home
+        </text>
       </svg>
     </div>
   </figure>
