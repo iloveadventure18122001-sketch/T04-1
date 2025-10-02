@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>T04 – SVG House &amp; Garden</title>
+  <style>
+    body {
+      background: #f4f8fb;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      margin-bottom: 1em;
+      color: #2d3e50;
+    }
+    .svg-container {
+      border: 3px solid #7da0b1;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 2px 8px #0001;
+      padding: 1em;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>T04 – SVG House &amp; Garden</h1>
+  <div class="svg-container">
+    <svg
+      viewBox="0 0 800 500"
+      width="800"
+      height="500"
+      aria-labelledby="svgTitle svgDesc"
+      role="img"
+    >
+      <title id="svgTitle">House and Garden Scene</title>
+      <desc id="svgDesc">
+        An SVG illustration of a house with a garden, showing sky, grass, sun, cloud, tree, house body, roof, chimney, door, two windows, a fence, a curved path, and a caption.
+      </desc>
+      <!-- Sky (rect) -->
+      <rect x="0" y="0" width="800" height="300" fill="#aee7ff" />
+      <!-- Grass (rect) -->
+      <rect x="0" y="300" width="800" height="200" fill="#7ed957" />
+
+      <!-- Sun (circle) -->
+      <circle cx="100" cy="100" r="50" fill="#ffe066" stroke="#ffd700" stroke-width="4" />
+
+      <!-- Cloud (ellipse + circles) -->
+      <ellipse cx="250" cy="90" rx="50" ry="25" fill="#fff" opacity="0.9"/>
+      <circle cx="220" cy="90" r="22" fill="#fff" opacity="0.9"/>
+      <circle cx="280" cy="90" r="18" fill="#fff" opacity="0.9"/>
+
+      <!-- Tree trunk (rect) -->
+      <rect x="650" y="270" width="25" height="80" fill="#8d5524" />
+      <!-- Tree foliage (circle) -->
+      <circle cx="662" cy="250" r="40" fill="#3cb371" />
+      <circle cx="690" cy="260" r="28" fill="#3cb371" />
+      <circle cx="635" cy="265" r="25" fill="#3cb371" />
+
+      <!-- House body (rect) -->
+      <rect x="340" y="220" width="160" height="120" fill="#f7cac9" stroke="#b56576" stroke-width="3"/>
+      <!-- Roof (polygon) -->
+      <polygon points="330,220 420,150 510,220" fill="#b5651d" stroke="#8d5524" stroke-width="3"/>
+      <!-- Chimney (rect) -->
+      <rect x="460" y="160" width="22" height="40" fill="#b56576" stroke="#8d5524" stroke-width="2"/>
+      <!-- Chimney smoke (polyline) -->
+      <polyline points="471,150 475,140 470,130 474,120" fill="none" stroke="#bbb" stroke-width="3" stroke-linecap="round" />
+
+      <!-- Door (rect) -->
+      <rect x="405" y="280" width="30" height="60" fill="#a0522d" stroke="#7b3f00" stroke-width="2"/>
+      <!-- Door knob (circle) -->
+      <circle cx="432" cy="310" r="3" fill="#ffd700" />
+
+      <!-- Left window (rect) -->
+      <rect x="355" y="245" width="30" height="30" fill="#b3e5fc" stroke="#1976d2" stroke-width="2"/>
+      <line x1="370" y1="245" x2="370" y2="275" stroke="#1976d2" stroke-width="2"/>
+      <line x1="355" y1="260" x2="385" y2="260" stroke="#1976d2" stroke-width="2"/>
+      <!-- Right window (rect) -->
+      <rect x="455" y="245" width="30" height="30" fill="#b3e5fc" stroke="#1976d2" stroke-width="2"/>
+      <line x1="470" y1="245" x2="470" y2="275" stroke="#1976d2" stroke-width="2"/>
+      <line x1="455" y1="260" x2="485" y2="260" stroke="#1976d2" stroke-width="2"/>
+
+      <!-- Fence (polyline) -->
+      <polyline points="200,340 220,320 240,340 260,320 280,340 300,320 320,340 340,320 360,340 380,320 400,340"
+        fill="none" stroke="#deb887" stroke-width="8" stroke-linejoin="round" />
+
+      <!-- Curved garden path (path) -->
+      <path d="M420,340 Q430,400 390,470 Q420,480 450,470 Q410,400 420,340"
+        fill="#f5e6b2" stroke="#bfa76f" stroke-width="3" opacity="0.8"/>
+
+      <!-- Caption (text) -->
+      <text x="400" y="490" text-anchor="middle" font-size="28" fill="#2d3e50" font-family="Arial, sans-serif">
+        Home Sweet Home
+      </text>
+    </svg>
+  </div>
+</body>
+</html>
